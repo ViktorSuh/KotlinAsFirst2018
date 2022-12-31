@@ -133,4 +133,11 @@ var tmp: Double = initial.toDouble()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int {
+    var str :String = number.toString()
+    var charArr:CharArray = str.toCharArray()
+    str = "" 
+    for (ch in (charArr.size-1) downTo 0){
+    str = str + charArr[ch]
+    }
+    return str.toInt()
