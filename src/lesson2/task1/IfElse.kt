@@ -96,7 +96,16 @@ fun timeForHalfWay(t1: Double, v1: Double,
  */
 fun whichRookThreatens(kingX: Int, kingY: Int,
                        rookX1: Int, rookY1: Int,
-                       rookX2: Int, rookY2: Int): Int = TODO()
+                       rookX2: Int, rookY2: Int): Int {
+if ((kingX!=rookX1)&&(kingX!=rookX2)&&(kingY!=rookY1)&&(kingY!=rookY2)) 
+    {return 0}
+if (((kingX==rookX1)&&(kingX!=rookX2)&&(kingY!=rookY2))||
+    ((kingX!=rookX1)&&(kingX==rookX2)&&(kingY!=rookY1))||
+    ((kingY==rookY1)&&(kingX!=rookX2)&&(kingY!=rookY2))||
+    ((kingY!=rookY1)&&(kingX!=rookX1)&&(kingY==rookY2)))
+    {return 1} 
+    return 2
+}
 
 /**
  * Простая
@@ -108,9 +117,33 @@ fun whichRookThreatens(kingX: Int, kingY: Int,
  * и 3, если угроза есть и от ладьи и от слона.
  * Считать, что ладья и слон не могут загораживать друг друга.
  */
-fun rookOrBishopThreatens(kingX: Int, kingY: Int,
+ffun rookOrBishopThreatens(kingX: Int, kingY: Int,
                           rookX: Int, rookY: Int,
-                          bishopX: Int, bishopY: Int): Int = TODO()
+                          bishopX: Int, bishopY: Int): Int {
+    val bishopListX: mutableListOf
+    val bishopListY: mutableListOf
+    var x:Int
+    var y:Int
+    for (i in 1..9){
+        if ((0<(x+i)<9 && 0<(y+i)<9) {
+            bishopListX.add (x+i)
+            bishopListY.add (y+i)
+        }    
+        if ((0<(x+i)<9 && 0<(y-i)<9) {
+            bishopListX.add (x+i)
+            bishopListY.add (y-i)
+        }
+        if ((0<(x-i)<9 && 0<(y-i)<9) {
+            bishopListX.add (x-i)
+            bishopListY.add (y-i)
+        }
+        if ((0<(x-i)<9 && 0<(y+i)<9) {
+            bishopListX.add (x-i)
+            bishopListY.add (y+i)
+        }
+    }
+    if(((kingX!=rookX)&&kingY!=rookY)&&(((bishopListX.indexOfFirst(kingX)<0) && ((bishopListY.indexOfFirst(kingY)<0))))
+}
 
 /**
  * Простая
