@@ -144,6 +144,7 @@ ffun rookOrBishopThreatens(kingX: Int, kingY: Int,
     }
     if(((kingX!=rookX)&&kingY!=rookY)&&(((bishopListX.indexOfFirst(kingX)<0) && ((bishopListY.indexOfFirst(kingY)<0))))
 }
+// проверка
 
 /**
  * Простая
