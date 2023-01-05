@@ -154,7 +154,24 @@ ffun rookOrBishopThreatens(kingX: Int, kingY: Int,
  * прямоугольным (вернуть 1) или тупоугольным (вернуть 2).
  * Если такой треугольник не существует, вернуть -1.
  */
-fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
+fun triangleKind(a: Double, b: Double, c: Double): Int {
+   var hep:Double=0.0
+   var cat1:Double=0.0
+   var cat2:Double=0.0
+   if(a>b && a>c) {
+       hep =a; cat1=b; cat2=c
+   }else if(b>a && b>c) {
+       hep =b; cat1=a; cat2=c
+   }else if(c>a && c>b) {
+       hep =c; cat1=b; cat2=a
+   }else {hep =b; cat1=a; cat2=c}
+   val res:Double  = (cat1*cat1 + cat2*cat2 - hep*hep) 
+   if((cat1+cat2)<hep) return -1
+   if(res > 0.0) return 0
+   if(res == 0.0) return 1
+   if(res < 0.0) return 2
+   return -2
+  }
 
 /**
  * Средняя
