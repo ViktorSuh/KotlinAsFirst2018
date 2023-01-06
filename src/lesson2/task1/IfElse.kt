@@ -119,7 +119,7 @@ if (((kingX==rookX1)&&(kingX!=rookX2)&&(kingY!=rookY2))||
  */
 ffun rookOrBishopThreatens(kingX: Int, kingY: Int,
                           rookX: Int, rookY: Int,
-                          bishopX: Int, bishopY: Int): Int {
+                          bishopX: Int, bishopY: Int): Int = TODO() /*{
     val bishopListX: mutableListOf
     val bishopListY: mutableListOf
     var x:Int
@@ -144,7 +144,7 @@ ffun rookOrBishopThreatens(kingX: Int, kingY: Int,
     }
     if(((kingX!=rookX)&&kingY!=rookY)&&(((bishopListX.indexOfFirst(kingX)<0) && ((bishopListY.indexOfFirst(kingY)<0))))
 }
-// проверка
+// проверка */
 
 /**
  * Простая
