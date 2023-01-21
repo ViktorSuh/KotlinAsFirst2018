@@ -109,14 +109,24 @@ fun lcm(m: Int, n: Int): Int {
  *
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
-fun minDivisor(n: Int): Int = TODO()
+fun minDivisor(n: Int): Int {
+for(i in 2..n/2){
+if (n%i==0) return i
+}
+return n
+}
 
 /**
  * Простая
  *
  * Для заданного числа n > 1 найти максимальный делитель, меньший n
  */
-fun maxDivisor(n: Int): Int = TODO()
+fun maxDivisor(n: Int): Int {
+for(i in n-1 downTo 2){
+ if(n%i==0) return i   
+}
+return 1
+}
 
 /**
  * Простая
@@ -125,7 +135,15 @@ fun maxDivisor(n: Int): Int = TODO()
  * Взаимно простые числа не имеют общих делителей, кроме 1.
  * Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
  */
-fun isCoPrime(m: Int, n: Int): Boolean = TODO()
+fun isCoPrime(m: Int, n: Int): Boolean {
+var x:Int = if(m>n) m else n
+for(i in 2..x/2){
+    if(x%i==0 && m%i==0 && n%i==0) return false
+       }
+return true
+    }
+
+}
 
 /**
  * Простая
@@ -134,7 +152,21 @@ fun isCoPrime(m: Int, n: Int): Boolean = TODO()
  * то есть, существует ли такое целое k, что m <= k*k <= n.
  * Например, для интервала 21..28 21 <= 5*5 <= 28, а для интервала 51..61 квадрата не существует.
  */
-fun squareBetweenExists(m: Int, n: Int): Boolean = TODO()
+fun squareBetweenExists(m: Int, n: Int): Boolean {
+     if(n>m) {
+           // var d: Int =n-m
+           for(i in 1.. (n-m)) {
+            if ((i*i) in m..n) return true
+        }
+        }
+       if(m>n) {
+           // var d: Int =m-n
+           for(i in 1.. (m-n)) {
+            if ((i*i) in n..m) return true
+        }
+        }
+       return false
+    }
 
 /**
  * Средняя
@@ -152,7 +184,19 @@ fun squareBetweenExists(m: Int, n: Int): Boolean = TODO()
  * Написать функцию, которая находит, сколько шагов требуется для
  * этого для какого-либо начального X > 0.
  */
-fun collatzSteps(x: Int): Int = TODO()
+fun collatzSteps(x: Int): Int {
+      var temp:Int = x
+      var count: Int =0
+     while(temp>1) {
+       count++
+       if(temp%2==0) {
+          temp=(temp/2)
+       } else {
+          temp=(3*temp+1)
+       }
+     }
+     return count
+    }
 
 /**
  * Средняя
